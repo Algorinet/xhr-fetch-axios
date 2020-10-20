@@ -2,13 +2,13 @@ const getBtn = document.getElementById('get-btn');
 const sendBtn = document.getElementById('send-btn');
 const getBtnPromise = document.getElementById('get-btnPromise');
 const postBtnPromise = document.getElementById('post-btnPromise');
-var postUrl = 'https://httpbin.org/post'
+var postUrl = 'https://reqres.in/api/register'
 
 
 // GET simple
 const getData = () => {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://httpbin.org/get'); 
+    xhr.open('GET', 'https://reqres.in/api/users'); 
     
     xhr.responseType = 'json';
     
@@ -23,12 +23,12 @@ const getData = () => {
 // POST simple
 const sendData = () => {
     const params = {
-        email:"alberto.gonzalez@cloudappi.net",
-        password: "albertito"
+        email: "eve.holt@reqres.in",
+        password: 'pistol'
     };
     
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://httpbin.org/post', true); 
+    xhr.open('POST', 'https://reqres.in/api/register', true); 
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.send(JSON.stringify(params))
     xhr.onload = () => {
@@ -56,7 +56,7 @@ const getHttpRequest = (method, url) => {
 };
 
 const getDataPromise = () => {
-    getHttpRequest('GET', 'https://httpbin.org/json')
+    getHttpRequest('GET', 'https://reqres.in/api/users')
     .then(responseData => {
         console.log(responseData);
     }).catch(err => {
@@ -89,8 +89,8 @@ const sendHttpRequest = (method, url, data) => {
 
 const sendDataPromise = () => {
     sendHttpRequest('POST', postUrl, {
-        email: "alberto.gonzalez@cloudappi.net",
-        password: "albertito"
+        email: "eve.holt@reqres.in",
+        password: 'pistol'
     }).then(responseData => {
         console.log(responseData);
     }).catch(err => {

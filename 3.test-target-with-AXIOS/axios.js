@@ -1,9 +1,9 @@
 const getBtn = document.getElementById('get-btn');
 const postBtn = document.getElementById('post-btn');
-var postUrl = 'https://httpbin.org/post';
+var postUrl = 'https://reqres.in/api/register';
 
 const getData = () => {
-    axios.get('https://httpbin.org/get').then(response => {
+    axios.get('https://reqres.in/api/users').then(response => {
         console.log(response);
     });
 };
@@ -11,8 +11,8 @@ const getData = () => {
 
 const sendData = () => {
     axios.post(postUrl, {
-        email: 'alberto.gonzalez@cloudapi.net',
-        password: 'albertito'
+        email: 'eve.holt@reqres.in',
+        password: 'pistol'
     },
     {
         headers: {
