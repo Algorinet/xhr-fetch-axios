@@ -1,6 +1,6 @@
 const getBtn = document.getElementById('get-btn');
 const postBtn = document.getElementById('post-btn');
-var url = 'https://api.eu-gb.apiconnect.appdomain.cloud/albertogonzalezcloudappinet-dev/sb/rentabilidades/consulta_rent_fondos'
+var postUrl = 'https://httpbin.org/post';
 
 const getData = () => {
     axios.get('https://httpbin.org/get').then(response => {
@@ -10,7 +10,7 @@ const getData = () => {
     
 
 const sendData = () => {
-    axios.post(url, {
+    axios.post(postUrl, {
         email: 'alberto.gonzalez@cloudapi.net',
         password: 'albertito'
     },
